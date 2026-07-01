@@ -27,20 +27,18 @@ export function AmijHome({
       <AnnouncementBar />
       <Header />
       <MarqueeStrip>{SHOP_COPY.heroMarquee}</MarqueeStrip>
-      <section className="hero-slice" aria-label="Almost Made in Japan campaign images">
-        {SITE_ASSETS.heroImages.map((src, index) => (
-          <img key={src} src={src} alt={index === 0 ? 'Campaign image' : 'Campaign closeup'} />
-        ))}
-      </section>
+<section className="hero-slice" aria-label="Almost Made in Japan campaign image">
+  <img src={SITE_ASSETS.heroMain} alt="Campaign image" />
+</section>
       <MarqueeStrip>{SHOP_COPY.heroMarquee}</MarqueeStrip>
 
       <CategoryGrid categories={categories} />
       <CollectionsGrid collections={collections} />
 
-      <section className="split-photo" aria-label="Latest campaign split image">
-        <img src={SITE_ASSETS.heroImages[1]} alt="Campaign jewelry detail" />
-        <img src={SITE_ASSETS.heroImages[0]} alt="Campaign jewelry group" />
-      </section>
+<section className="split-photo" aria-label="Latest campaign split image">
+  <img src={SITE_ASSETS.heroCloseup} alt="Campaign jewelry detail" />
+  <img src={SITE_ASSETS.heroMain} alt="Campaign jewelry group" />
+</section>
       <MarqueeStrip tone="pink">{SHOP_COPY.latestMarquee}</MarqueeStrip>
 
       {featured && <FeaturedProduct product={featured} />}
