@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
-<defs><filter id="glow"><feGaussianBlur stdDeviation="8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
-<circle cx="256" cy="256" r="222" fill="#ffd6ef" filter="url(#glow)"/><circle cx="256" cy="256" r="188" fill="#f9f1f7"/>
-<path d="M154 250c10-70 67-112 128-101 66 12 104 63 91 127-12 57-64 94-123 85-61-9-105-51-96-111z" fill="#f4bedb"/>
-<path d="M160 205c-16-50 15-80 49-58 18-52 78-47 93-4 43-26 84 14 60 68" fill="#b7d48e" stroke="#775a7f" stroke-width="8" stroke-linecap="round"/>
-<circle cx="218" cy="276" r="8" fill="#65465e"/><circle cx="300" cy="276" r="8" fill="#65465e"/>
-<path d="M236 309c18 14 40 13 56 0" fill="none" stroke="#65465e" stroke-width="7" stroke-linecap="round"/>
-<text x="256" y="96" text-anchor="middle" font-family="Georgia" font-size="30" fill="#e35cae">Almost made in Japan</text>
-</svg>
