@@ -1,7 +1,7 @@
 export const SITE_ASSETS = {
   logo: '/assets/amij-logo.png',
   mascot: '/assets/amij-mascot.png',
-  heroImages: ['/assets/hero-main.svg', '/assets/hero-closeup.jpg'],
+  heroImages: ['/assets/hero-main.jpg', '/assets/hero-closeup.jpg'],
   photoImages: ['/assets/your-photos.jpg'],
   footerHeart: '/assets/newsletter-heart.jpg',
   collectionImages: {
