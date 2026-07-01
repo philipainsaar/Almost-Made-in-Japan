@@ -1,16 +1,5 @@
-@font-face {
-  font-family: 'AMIJ Sans';
-  src: url('/fonts/murecho.woff2') format('woff2');
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'AMIJ Header';
-  src: url('/fonts/germania-one.woff2') format('woff2');
-  font-display: swap;
-}
-
 :root {
+  --font-main: 'Bitcount Prop Single', system-ui, sans-serif;
   --white: #ffffff;
   --ink: #17171a;
   --soft-ink: #555257;
@@ -21,8 +10,11 @@
   --purple: #6b32f4;
   --page-x: 26px;
   --header-h: 258px;
-  --sans: 'AMIJ Sans', 'Murecho', 'Noto Sans JP', 'Helvetica Neue', Arial, sans-serif;
-  --serif: 'Times New Roman', Georgia, serif;
+}
+
+html,
+body {
+  : var(--font-main);
 }
 
 * { box-sizing: border-box; }
@@ -31,7 +23,7 @@ body {
   margin: 0;
   background: var(--white);
   color: var(--ink);
-  font-family: var(--sans);
+  : var(--sans);
   overflow-x: hidden;
 }
 
@@ -172,7 +164,7 @@ img { display: block; max-width: 100%; }
   align-items: center;
   overflow: hidden;
   color: var(--white);
-  font-family: var(--serif);
+  : var(--serif);
   font-weight: 700;
   font-size: clamp(24px, 7vw, 42px);
   text-transform: uppercase;
@@ -265,12 +257,12 @@ img { display: block; max-width: 100%; }
   line-height: 1.05;
 }
 .featured-price {
-  font-family: var(--serif);
+  : var(--serif);
   font-size: clamp(28px, 6.5vw, 42px);
   letter-spacing: 0.04em;
   margin: 0 0 18px;
 }
-.tax-note { font-family: var(--serif); color: var(--soft-ink); letter-spacing: 0.06em; font-size: 17px; margin: 0 0 32px; }
+.tax-note { : var(--serif); color: var(--soft-ink); letter-spacing: 0.06em; font-size: 17px; margin: 0 0 32px; }
 .featured-copy label, .product-detail-copy label { display: block; font-family: var(--serif); color: var(--soft-ink); font-size: 20px; margin-bottom: 14px; }
 .quantity-box {
   width: min(300px, 68vw);
