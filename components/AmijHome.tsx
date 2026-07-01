@@ -37,7 +37,7 @@ export function AmijHome({
 
 <section className="split-photo" aria-label="Latest campaign split image">
   <img src={SITE_ASSETS.heroCloseup} alt="Campaign jewelry detail" />
-  <img src={SITE_ASSETS.photoImages[0]} alt="AMIJ jewelry styling" />
+  
 </section>
       <MarqueeStrip tone="pink">{SHOP_COPY.latestMarquee}</MarqueeStrip>
 
