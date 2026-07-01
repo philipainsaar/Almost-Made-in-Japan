@@ -7,11 +7,7 @@ export function PhotoBand({ compact = false }: { compact?: boolean }) {
       {!compact && <MarqueeStrip tone="pink">{SHOP_COPY.photosMarquee}</MarqueeStrip>}
 <div className="photo-row">
   {SITE_ASSETS.photoImages.map((src) => (
-    <img key={src} src={src} alt="Customer wearing AMIJ jewelry" />
-  ))}
-
-  {[SITE_ASSETS.heroCloseup, SITE_ASSETS.heroMain].map((src) => (
-    <img key={src} src={src} alt="AMIJ jewelry styling" />
+    <img key={src} src={src} alt="Almost made in Japan jewelry styling" />
   ))}
 </div>
     </section>
