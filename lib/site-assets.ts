@@ -4,8 +4,10 @@ export const SITE_ASSETS = {
 
   heroMain: '/assets/hero-main.jpg',
   heroCloseup: '/assets/hero-closeup.jpg',
+  heroExamples: '/assets/hero-examples.jpg',
 
   photoImages: ['/assets/your-photos.jpg'],
+
   footerHeart: '/assets/newsletter-heart.jpg',
 
   collectionImages: {
