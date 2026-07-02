@@ -606,6 +606,36 @@ img { display: block; max-width: 100%; }
     object-fit: contain;
     scroll-snap-align: start;
   }
+
+  /* Mobile: your-photos.jpg and footer/example photo bands are swipeable too. */
+  .photo-band {
+    overflow: hidden;
+  }
+
+  .photo-row {
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+  }
+
+  .photo-row img,
+  .photo-band.compact .photo-row img {
+    flex: 0 0 auto;
+    width: auto;
+    min-width: 100vw;
+    max-width: none;
+    height: 58vh;
+    object-fit: contain;
+    scroll-snap-align: start;
+    background: #f6f6f6;
+  }
+
+  .photo-band.compact .photo-row img {
+    height: 48vh;
+  }
 }
 
 @media (min-width: 760px) {
@@ -651,4 +681,135 @@ img { display: block; max-width: 100%; }
 
 @media (prefers-reduced-motion: reduce) {
   .marquee-strip div { animation: none; }
+}
+
+/* FINAL MOBILE WIDE-PHOTO OVERRIDE
+   Makes single-image photo bands like your-photos.jpg and hero-examples.jpg horizontally swipeable. */
+@media (max-width: 759px) {
+  .photo-band {
+    width: 100vw;
+    max-width: 100vw;
+    overflow: hidden;
+  }
+
+  .photo-row {
+    display: flex;
+    width: 100vw;
+    max-width: 100vw;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    touch-action: pan-x;
+  }
+
+  .photo-row::-webkit-scrollbar {
+    display: none;
+  }
+
+  .photo-row img,
+  .photo-band.compact .photo-row img {
+    flex: 0 0 auto;
+    width: auto !important;
+    min-width: auto !important;
+    max-width: none !important;
+    height: 58vh;
+    object-fit: contain;
+    object-position: left center;
+    scroll-snap-align: start;
+    background: #f6f6f6;
+  }
+
+  .photo-band.compact .photo-row img {
+    height: 48vh;
+  }
+
+  /* One-image rows still need extra horizontal canvas to drag/swipe. */
+  .photo-row img:only-child,
+  .photo-band.compact .photo-row img:only-child {
+    min-width: 180vw !important;
+  }
+}
+
+/* FINAL CENTERED WIDE IMAGE SWIPE
+   Used by components/CenteredImageScroller.tsx.
+   Starts each wide image from its center, then lets the user swipe left/right. */
+.hero-slice,
+.split-photo,
+.photo-band {
+  display: block !important;
+  width: 100vw;
+  max-width: 100vw;
+  overflow: hidden !important;
+}
+
+.hero-slice {
+  height: min(90vh, 700px);
+  background: #f5f5f5;
+}
+
+.split-photo {
+  height: 68vh;
+  grid-template-columns: none !important;
+  background: #f6f6f6;
+}
+
+.photo-band {
+  height: 58vh;
+}
+
+.photo-band.compact {
+  height: 48vh;
+  margin-top: 42px;
+}
+
+.centered-swipe-row {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  touch-action: pan-x;
+}
+
+.centered-swipe-row::-webkit-scrollbar {
+  display: none;
+}
+
+.centered-swipe-row img,
+.hero-slice .centered-swipe-row img,
+.split-photo .centered-swipe-row img,
+.photo-band .centered-swipe-row img,
+.photo-band.compact .centered-swipe-row img {
+  flex: 0 0 auto;
+  height: 100%;
+  width: auto !important;
+  min-width: auto !important;
+  max-width: none !important;
+  object-fit: contain !important;
+  object-position: center center;
+  background: #f6f6f6;
+}
+
+@media (max-width: 759px) {
+  .hero-slice {
+    height: 80vh;
+  }
+
+  .split-photo {
+    height: 68vh;
+  }
+
+  .photo-band {
+    height: 58vh;
+  }
+
+  .photo-band.compact {
+    height: 48vh;
+  }
 }
