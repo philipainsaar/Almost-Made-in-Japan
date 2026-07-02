@@ -1061,3 +1061,265 @@ main {
     overflow-wrap: anywhere !important;
   }
 }
+
+/* FIXED COMPACT HEADER UPDATE
+   Keeps the logo/buttons visible while scrolling and makes the top bar smaller. */
+:root {
+  --header-h: 92px !important;
+}
+
+.site-header {
+  position: sticky !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 1000 !important;
+  min-height: var(--header-h) !important;
+  height: var(--header-h) !important;
+  background: rgba(255, 255, 255, 0.96) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border-bottom: 1px solid var(--line) !important;
+}
+
+.mobile-nav-line {
+  height: var(--header-h) !important;
+  min-height: var(--header-h) !important;
+  padding: 6px 14px !important;
+  display: grid !important;
+  grid-template-columns: 1fr auto 1fr !important;
+  align-items: center !important;
+}
+
+.logo-link,
+.logo-link img {
+  width: 68px !important;
+  height: 68px !important;
+}
+
+.header-actions {
+  gap: 18px !important;
+}
+
+.hamburger {
+  width: 34px !important;
+  height: 34px !important;
+  gap: 6px !important;
+}
+
+.hamburger span {
+  width: 30px !important;
+  height: 2px !important;
+}
+
+.search-icon {
+  width: 34px !important;
+  height: 34px !important;
+}
+
+.search-icon::before {
+  left: 3px !important;
+  top: 2px !important;
+  width: 21px !important;
+  height: 21px !important;
+  border-width: 2px !important;
+}
+
+.search-icon span {
+  left: 24px !important;
+  top: 26px !important;
+  width: 15px !important;
+  height: 2px !important;
+}
+
+.bag-icon {
+  width: 32px !important;
+  height: 36px !important;
+  border-width: 2px !important;
+  border-radius: 0 0 8px 8px !important;
+}
+
+.bag-icon::before {
+  left: 7px !important;
+  top: -6px !important;
+  width: 15px !important;
+  height: 11px !important;
+  border-width: 2px !important;
+}
+
+.bag-icon span {
+  inset: 5px 0 auto !important;
+  font-size: 11px !important;
+}
+
+.flyout-menu {
+  top: calc(100% + 1px) !important;
+  z-index: 1001 !important;
+}
+
+@media (min-width: 760px) {
+  :root {
+    --header-h: 88px !important;
+  }
+
+  .mobile-nav-line {
+    padding-left: 22px !important;
+    padding-right: 22px !important;
+  }
+
+  .logo-link,
+  .logo-link img {
+    width: 70px !important;
+    height: 70px !important;
+  }
+}
+
+@media (max-width: 420px) {
+  :root {
+    --header-h: 84px !important;
+  }
+
+  .mobile-nav-line {
+    padding: 5px 12px !important;
+  }
+
+  .logo-link,
+  .logo-link img {
+    width: 62px !important;
+    height: 62px !important;
+  }
+
+  .header-actions {
+    gap: 14px !important;
+  }
+
+  .hamburger {
+    width: 31px !important;
+    height: 31px !important;
+  }
+
+  .hamburger span {
+    width: 27px !important;
+  }
+
+  .search-icon {
+    width: 31px !important;
+    height: 31px !important;
+  }
+
+  .bag-icon {
+    width: 29px !important;
+    height: 33px !important;
+  }
+}
+
+/* FINAL TEXT EDGE PADDING FIX
+   Keeps full-bleed images/grids, but gives all normal text/content sections
+   inner breathing room so text does not touch the screen edge.
+   Marquee strips are intentionally not included here. */
+:root {
+  --content-pad: clamp(16px, 4vw, 34px);
+}
+
+.featured-copy,
+.product-detail-copy,
+.product-description,
+.newsletter,
+.footer-meta,
+.cart-head,
+.cart-error,
+.cart-note,
+.cart-empty,
+.cart-lines,
+.cart-footer {
+  padding-left: var(--content-pad) !important;
+  padding-right: var(--content-pad) !important;
+  box-sizing: border-box !important;
+}
+
+.featured-copy h2,
+.product-detail-copy h1,
+.featured-price,
+.tax-note,
+.featured-copy label,
+.product-detail-copy label,
+.product-description,
+.back-link,
+.collection-page h1,
+.collection-page > p,
+.product-rail-section h2,
+.category-section h2,
+.collections-section h2,
+.newsletter h2,
+.footer-meta p,
+.footer-meta label,
+.footer-meta select,
+.rail-controls,
+.view-all-button {
+  max-width: 100%;
+  box-sizing: border-box !important;
+}
+
+.product-detail .back-link,
+.collection-page .back-link {
+  margin-left: var(--content-pad) !important;
+  margin-right: var(--content-pad) !important;
+}
+
+.product-grid-wide .product-title,
+.product-grid-wide .product-card p,
+.product-rail .product-title,
+.product-rail .product-card p {
+  padding-left: min(12px, var(--content-pad)) !important;
+  padding-right: min(12px, var(--content-pad)) !important;
+  box-sizing: border-box !important;
+}
+
+.email-box,
+.quantity-box,
+.add-cart-main,
+.variant-select select,
+.shop-follow {
+  max-width: calc(100vw - (var(--content-pad) * 2)) !important;
+  box-sizing: border-box !important;
+}
+
+.quantity-box,
+.add-cart-main,
+.variant-select select {
+  width: 100% !important;
+}
+
+@media (max-width: 759px) {
+  :root {
+    --content-pad: 18px;
+  }
+
+  .featured-copy,
+  .product-detail-copy {
+    padding-left: var(--content-pad) !important;
+    padding-right: var(--content-pad) !important;
+  }
+
+  .featured-copy h2,
+  .product-detail-copy h1 {
+    font-size: clamp(34px, 10vw, 58px) !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  .featured-price {
+    font-size: clamp(25px, 8vw, 38px) !important;
+    overflow-wrap: anywhere !important;
+  }
+}
+
+@media (max-width: 420px) {
+  :root {
+    --content-pad: 16px;
+  }
+
+  .featured-copy h2,
+  .product-detail-copy h1 {
+    font-size: clamp(31px, 9.5vw, 46px) !important;
+  }
+}
