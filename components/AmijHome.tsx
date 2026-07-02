@@ -27,8 +27,10 @@ export function AmijHome({
       <AnnouncementBar />
       <Header />
       <MarqueeStrip>{SHOP_COPY.heroMarquee}</MarqueeStrip>
-<section className="hero-slice" aria-label="Almost Made in Japan campaign image">
-  <img src={SITE_ASSETS.heroMain} alt="Campaign image" />
+<section className="hero-slice" aria-label="Almost Made in Japan campaign images">
+  {[SITE_ASSETS.heroMain, SITE_ASSETS.heroCloseup].map((src) => (
+    <img key={src} src={src} alt="Almost Made in Japan campaign" />
+  ))}
 </section>
       <MarqueeStrip>{SHOP_COPY.heroMarquee}</MarqueeStrip>
 
