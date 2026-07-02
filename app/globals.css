@@ -1443,3 +1443,190 @@ main {
     gap: 14px !important;
   }
 }
+
+/* FINAL CART + HEADER ICON FIX
+   Keeps the header fixed, makes the two right icons smaller, fixes the bag/cart shape,
+   and lets the cart drawer sit above the fixed header so it does not get stuck. */
+:root {
+  --fixed-header-h: 72px;
+}
+
+.site-header {
+  z-index: 9000 !important;
+  min-height: var(--fixed-header-h) !important;
+  height: var(--fixed-header-h) !important;
+}
+
+main {
+  padding-top: var(--fixed-header-h) !important;
+}
+
+.mobile-nav-line {
+  height: var(--fixed-header-h) !important;
+  min-height: var(--fixed-header-h) !important;
+  padding: 6px 14px !important;
+}
+
+.logo-link,
+.logo-link img {
+  width: 54px !important;
+  height: 54px !important;
+}
+
+.header-actions {
+  gap: 12px !important;
+  align-items: center !important;
+}
+
+.search-icon,
+.bag-icon {
+  flex: 0 0 auto !important;
+}
+
+/* Smaller search icon */
+.search-icon {
+  width: 25px !important;
+  height: 25px !important;
+}
+
+.search-icon::before {
+  left: 2px !important;
+  top: 1px !important;
+  width: 14px !important;
+  height: 14px !important;
+  border-width: 2px !important;
+}
+
+.search-icon span {
+  left: 16px !important;
+  top: 18px !important;
+  width: 10px !important;
+  height: 2px !important;
+}
+
+/* Smaller, cleaner shopping bag/cart icon */
+.bag-icon {
+  width: 24px !important;
+  height: 25px !important;
+  border: 2px solid var(--ink) !important;
+  border-top: 2px solid var(--ink) !important;
+  border-radius: 4px 4px 7px 7px !important;
+  background: transparent !important;
+}
+
+.bag-icon::before {
+  content: '' !important;
+  position: absolute !important;
+  left: 50% !important;
+  top: -8px !important;
+  width: 12px !important;
+  height: 10px !important;
+  transform: translateX(-50%) !important;
+  border: 2px solid var(--ink) !important;
+  border-bottom: 0 !important;
+  border-radius: 12px 12px 0 0 !important;
+  background: transparent !important;
+}
+
+.bag-icon span {
+  inset: 4px 0 auto !important;
+  font-size: 9px !important;
+  line-height: 1 !important;
+  text-align: center !important;
+}
+
+/* Slightly smaller hamburger so the row feels balanced */
+.hamburger {
+  width: 28px !important;
+  height: 28px !important;
+  gap: 5px !important;
+}
+
+.hamburger span {
+  width: 24px !important;
+  height: 2px !important;
+}
+
+/* Menu still opens under fixed header */
+.flyout-menu {
+  top: var(--fixed-header-h) !important;
+  z-index: 9500 !important;
+}
+
+/* Cart must be above the fixed header, otherwise it can feel stuck or unclosable. */
+.cart-backdrop {
+  z-index: 20000 !important;
+}
+
+.cart-drawer {
+  z-index: 20001 !important;
+  top: 0 !important;
+}
+
+.cart-head {
+  min-height: var(--fixed-header-h) !important;
+  padding: 16px 18px !important;
+}
+
+.cart-head h2 {
+  font-size: 24px !important;
+}
+
+.cart-head button {
+  font-size: 34px !important;
+  line-height: 1 !important;
+}
+
+@media (max-width: 420px) {
+  :root {
+    --fixed-header-h: 66px;
+  }
+
+  .mobile-nav-line {
+    height: var(--fixed-header-h) !important;
+    min-height: var(--fixed-header-h) !important;
+    padding: 6px 12px !important;
+  }
+
+  .logo-link,
+  .logo-link img {
+    width: 48px !important;
+    height: 48px !important;
+  }
+
+  .header-actions {
+    gap: 10px !important;
+  }
+
+  .search-icon {
+    width: 23px !important;
+    height: 23px !important;
+  }
+
+  .search-icon::before {
+    width: 13px !important;
+    height: 13px !important;
+  }
+
+  .search-icon span {
+    left: 15px !important;
+    top: 17px !important;
+    width: 9px !important;
+  }
+
+  .bag-icon {
+    width: 22px !important;
+    height: 24px !important;
+  }
+
+  .bag-icon::before {
+    top: -7px !important;
+    width: 11px !important;
+    height: 9px !important;
+  }
+
+  .cart-head {
+    min-height: var(--fixed-header-h) !important;
+    padding: 14px 16px !important;
+  }
+}
