@@ -1,4 +1,6 @@
+// components/PhotoBand.tsx
 import { SITE_ASSETS } from '@/lib/site-assets';
+import { CenteredImageScroller } from './CenteredImageScroller';
 
 export function PhotoBand({
   compact = false,
@@ -8,15 +10,12 @@ export function PhotoBand({
   images?: string[];
 }) {
   return (
-    <section
-      className={`photo-band${compact ? ' compact' : ''}`}
-      aria-label="Almost Made in Japan photo gallery"
-    >
-      <div className="photo-row">
-        {images.map((src) => (
-          <img key={src} src={src} alt="Almost Made in Japan styling" />
-        ))}
-      </div>
-    </section>
+    <CenteredImageScroller
+      className="photo-band"
+      compact={compact}
+      images={images}
+      ariaLabel="Almost Made in Japan photo gallery"
+      alt="Almost Made in Japan styling"
+    />
   );
 }
