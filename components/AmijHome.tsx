@@ -54,11 +54,11 @@ export function AmijHome({
 
       {featured && <FeaturedProduct product={featured} />}
 
-      <PhotoBand images={SITE_ASSETS.photoImages} />
+      <PhotoBand images={SITE_ASSETS.heroExamples} />
 
       <ProductRail products={products} />
 
-      <PhotoBand images={[SITE_ASSETS.heroExamples]} compact />
+      <PhotoBand images={[SITE_ASSETS.photoImages]} compact />
 
       <NewsletterFooter />
       <FloatingMascot />
