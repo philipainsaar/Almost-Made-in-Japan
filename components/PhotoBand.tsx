@@ -1,15 +1,22 @@
-import { SITE_ASSETS, SHOP_COPY } from '@/lib/site-assets';
-import { MarqueeStrip } from './MarqueeStrip';
+import { SITE_ASSETS } from '@/lib/site-assets';
 
-export function PhotoBand({ compact = false }: { compact?: boolean }) {
+export function PhotoBand({
+  compact = false,
+  images = SITE_ASSETS.photoImages
+}: {
+  compact?: boolean;
+  images?: string[];
+}) {
   return (
-    <section className={`photo-band ${compact ? 'compact' : ''}`}>
-      {!compact && <MarqueeStrip tone="pink">{SHOP_COPY.photosMarquee}</MarqueeStrip>}
-<div className="photo-row">
-  {SITE_ASSETS.photoImages.map((src) => (
-    <img key={src} src={src} alt="Almost made in Japan jewelry styling" />
-  ))}
-</div>
+    <section
+      className={`photo-band${compact ? ' compact' : ''}`}
+      aria-label="Almost Made in Japan photo gallery"
+    >
+      <div className="photo-row">
+        {images.map((src) => (
+          <img key={src} src={src} alt="Almost Made in Japan styling" />
+        ))}
+      </div>
     </section>
   );
 }
