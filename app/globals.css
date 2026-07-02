@@ -8,7 +8,7 @@
   --pink: #efa0d5;
   --soft-pink: #f6c7e8;
   --purple: #6b32f4;
-  --page-x: 26px;
+  --page-x: 0px;
   --header-h: 258px;
 }
 
@@ -31,7 +31,21 @@ button, input, select { font: inherit; }
 button { color: inherit; background: none; border: 0; cursor: pointer; }
 img { display: block; max-width: 100%; }
 
-.page-pad { padding-left: var(--page-x); padding-right: var(--page-x); }
+.page-pad { padding-left: 0; padding-right: 0; }
+
+/* Full-bleed layout: no page side gutters */
+.category-section,
+.collections-section,
+.product-rail-section,
+.featured-product,
+.product-detail,
+.collection-page,
+.newsletter,
+.footer-meta {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
 
 .announcement-bar {
   height: 58px;
@@ -57,7 +71,7 @@ img { display: block; max-width: 100%; }
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  padding: 12px 52px 18px;
+  padding: 12px 18px 18px;
 }
 .logo-link {
   width: 122px;
@@ -339,7 +353,7 @@ img { display: block; max-width: 100%; }
   gap: 8px;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
-  margin-right: calc(var(--page-x) * -1);
+  margin-right: 0;
 }
 .product-rail::-webkit-scrollbar { display: none; }
 .product-card {
@@ -549,8 +563,8 @@ img { display: block; max-width: 100%; }
 .cart-footer p { font-family: var(--font-main), system-ui, sans-serif; color: var(--soft-ink); font-size: 14px; }
 
 @media (min-width: 760px) {
-  :root { --page-x: 6vw; --header-h: 220px; }
-  .mobile-nav-line { padding-left: 7vw; padding-right: 7vw; }
+  :root { --page-x: 0px; --header-h: 220px; }
+  .mobile-nav-line { padding-left: 24px; padding-right: 24px; }
   .hero-slice { height: 78vh; }
   .tile-grid { gap: 54px 18px; }
   .category-tile, .collection-tile { gap: 26px; }
@@ -569,8 +583,8 @@ img { display: block; max-width: 100%; }
 }
 
 @media (max-width: 420px) {
-  :root { --page-x: 20px; --header-h: 234px; }
-  .mobile-nav-line { padding: 10px 52px 16px; }
+  :root { --page-x: 0px; --header-h: 234px; }
+  .mobile-nav-line { padding: 10px 18px 16px; }
   .logo-link, .logo-link img { width: 112px; height: 112px; }
   .header-actions { gap: 24px; }
   .marquee-strip { height: 60px; }
