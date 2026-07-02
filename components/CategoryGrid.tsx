@@ -1,4 +1,5 @@
 import Link from 'next/link';
+
 import { SITE_ASSETS } from '@/lib/site-assets';
 import type { ShopifyCollection } from '@/lib/shopify';
 
@@ -18,13 +19,13 @@ function imageFor(collection: ShopifyCollection) {
 
 export function CategoryGrid({ categories }: { categories: ShopifyCollection[] }) {
   return (
-    <section className="category-section">
+    <section className="category-section page-pad">
       <h2>JEWELLERY</h2>
 
-      <div className="category-grid">
+      <div className="tile-grid">
         {categories.map((collection) => (
           <Link
-            className="category-card"
+            className="category-tile"
             key={collection.handle}
             href={`/collections/${collection.handle}`}
           >
