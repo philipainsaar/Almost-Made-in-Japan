@@ -54,7 +54,7 @@ export function AmijHome({
 
       {featured && <FeaturedProduct product={featured} />}
 
-      <PhotoBand images={SITE_ASSETS.heroExamples} />
+      <PhotoBand images={[SITE_ASSETS.heroExamples]} />
 
       <ProductRail products={products} />
 
