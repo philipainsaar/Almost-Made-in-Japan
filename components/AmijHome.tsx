@@ -33,7 +33,7 @@ export function AmijHome({
 
       <CenteredImageScroller
         className="hero-slice"
-        images={[SITE_ASSETS.heroMain, SITE_ASSETS.heroCloseup]}
+        images={[SITE_ASSETS.heroMain }
         ariaLabel="Almost Made in Japan campaign images"
         alt="Almost Made in Japan campaign"
       />
